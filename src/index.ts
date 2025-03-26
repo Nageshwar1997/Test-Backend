@@ -1,5 +1,5 @@
 import "dotenv/config";
-import express, { Request, Response } from "express";
+import express, { NextFunction, Request, Response } from "express";
 import cors from "cors";
 import User from "./model/User.model";
 import mongoose from "mongoose";
@@ -53,14 +53,14 @@ app.use(
 );
 
 // Routes with DB connection middleware
-// app.use(async (_: Request, res: Response, next: NextFunction) => {
-//   try {
-//     await connectDB();
-//     next();
-//   } catch (error) {
-//     res.status(500).json({ error: "Database connection failed" });
-//   }
-// });
+app.use(async (_: Request, res: Response, next: NextFunction) => {
+  try {
+    await connectDB();
+    next();
+  } catch (error) {
+    res.status(500).json({ error: "Database connection failed" });
+  }
+});
 
 app.get("/", async (_: Request, res: Response) => {
   try {
