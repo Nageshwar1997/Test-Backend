@@ -1,21 +1,39 @@
 {
-  "name": "test-backend",
+  "name": "bq-backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Beautinique E-Commerce Backend",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "tsc",
+    "dev": "nodemon --exec node -r ts-node/register src/index.ts",
+    "start": "node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Nageshwar1997/Test-Backend.git"
+    "url": "git+https://github.com/Nageshwar1997/BQ-Backend.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Nageshwar",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/Nageshwar1997/Test-Backend/issues"
+    "url": "https://github.com/Nageshwar1997/BQ-Backend/issues"
   },
-  "homepage": "https://github.com/Nageshwar1997/Test-Backend#readme"
+  "homepage": "https://github.com/Nageshwar1997/BQ-Backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.13.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/dotenv": "^6.1.1",
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.13.13",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  }
 }
