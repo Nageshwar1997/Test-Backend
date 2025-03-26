@@ -30,7 +30,7 @@ app.use(
 // Home route
 app.get("/", async (_: Request, res: Response) => {
   try {
-    const users = await User.find();
+    const users: unknown = [];
     res.json(users);
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
